@@ -1,4 +1,4 @@
-package com.richard.infrastructure.clients.customer;
+package com.richard.infrastructure.clients.reserve;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.logging.Logger;
@@ -10,28 +10,27 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
 
-@Path("/customerCli")
+@Path("/reserveCli")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class CustomerResource {
-    protected static final Logger LOGGER = Logger.getLogger(CustomerService.class);
-    
-    
+public class ReserveResource {
+
+    protected static final Logger LOGGER = Logger.getLogger(ReserveResource.class);
+
     @Inject
     @RestClient
-    CustomerService customerService;
+    ReserveService reserveService;
 
     @GET()
     @Path("new")
     public Response newCustomer() {
         LOGGER.info("newCustomer");
-        Customer customer = Customer.of(10, "Remoto");
+        Reserve reserve = Reserve.of("ReserveRemoto");
 
-        Response response = customerService.newCustomer(customer);
+        Response response = reserveService.newReserve(reserve);
 
-        return Response.status(Status.CREATED).entity(response.getHeaders().get("Location")).build();
+        return Response.status(Response.Status.CREATED).entity(response.getHeaders().get("Location")).build();
     }
 
 }

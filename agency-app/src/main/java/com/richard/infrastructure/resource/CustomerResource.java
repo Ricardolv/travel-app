@@ -11,13 +11,14 @@ import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriBuilder;
 import javax.ws.rs.core.UriInfo;
+
+import static com.richard.infrastructure.resource.utils.ResourceUtils.genericUriBuilder;
 
 @Path("/customers")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -41,8 +42,8 @@ public class CustomerResource {
     }
 
     @GET
-    @Path("findById")
-    public Response findById(@QueryParam("id") long id) {
+    @Path("/{id}")
+    public Response findById(@PathParam("id") long id) {
         return Response.ok()
                 .entity(mapper.toEntity(service.findById(id)))
                 .build();
@@ -56,15 +57,10 @@ public class CustomerResource {
     }
 
     @DELETE
-    public Response deleteById(@QueryParam("id") long id) {
+    @Path("/{id}")
+    public Response deleteById(@PathParam("id") long id) {
         service.deleteById(id);
         return Response.noContent().build();
-    }
-
-    private UriBuilder genericUriBuilder(Long id, UriInfo uriInfo) {
-        final UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder().path(id.toString());
-        LOGGER.info("New enterprise created with URI " + uriBuilder.build().toString());
-        return uriBuilder;
     }
 
 }

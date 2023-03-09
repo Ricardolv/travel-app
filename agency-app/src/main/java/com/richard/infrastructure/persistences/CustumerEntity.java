@@ -11,8 +11,6 @@ public class CustumerEntity extends PanacheEntity {
 
     public String name;
 
-    
-
     public CustumerEntity() {
     }
 

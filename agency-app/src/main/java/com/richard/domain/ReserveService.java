@@ -18,7 +18,6 @@ public class ReserveService {
 
     @Transactional
     public ReserveEntity create(String nameCustomer) {
-
         LOGGER.info("INIT create name {}" + nameCustomer);
 
         ReserveEntity reserveEntity = new ReserveEntity();
@@ -30,4 +29,14 @@ public class ReserveService {
         LOGGER.info("END created reserveEntity {}" + reserveEntity);
         return reserveEntity;
     }
+
+    @Transactional
+    public void deleteById(long id) {
+        ReserveEntity.deleteById(id);
+    }
+
+    public ReserveEntity findById(long id) {
+        return ReserveEntity.findById(id);
+    }
+
 }
