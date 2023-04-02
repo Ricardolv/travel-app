@@ -1,4 +1,4 @@
-package com.richard.infrastructure.resource.response;
+package com.richard.infrastructure.resources.response;
 
 public record CustomerResponse(long id, String name) {
 

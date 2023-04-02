@@ -1,9 +1,9 @@
-package com.richard.infrastructure.resource;
+package com.richard.infrastructure.resources;
 
 import com.richard.domain.CustomerService;
-import com.richard.infrastructure.persistences.CustumerEntity;
-import com.richard.infrastructure.resource.mapper.CustomerMapper;
-import com.richard.infrastructure.resource.request.CustomerRequest;
+import com.richard.infrastructure.presistences.CustumerEntity;
+import com.richard.infrastructure.resources.mapper.CustomerMapper;
+import com.richard.infrastructure.resources.request.CustomerRequest;
 import org.jboss.logging.Logger;
 
 import javax.ws.rs.Consumes;
@@ -18,7 +18,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import static com.richard.infrastructure.resource.utils.ResourceUtils.genericUriBuilder;
+import static com.richard.infrastructure.resources.utils.ResourceUtils.genericUriBuilder;
 
 @Path("/customers")
 @Consumes(MediaType.APPLICATION_JSON)

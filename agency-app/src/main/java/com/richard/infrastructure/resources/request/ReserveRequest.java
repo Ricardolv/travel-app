@@ -1,4 +1,4 @@
-package com.richard.infrastructure.resource.request;
+package com.richard.infrastructure.resources.request;
 
 public record ReserveRequest(String nameCustomer) {
 

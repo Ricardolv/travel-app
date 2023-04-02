@@ -1,9 +1,9 @@
-package com.richard.infrastructure.resource;
+package com.richard.infrastructure.resources;
 
 import com.richard.domain.ReserveService;
 import com.richard.infrastructure.persistences.ReserveEntity;
-import com.richard.infrastructure.resource.mapper.ReserveMapper;
-import com.richard.infrastructure.resource.request.ReserveRequest;
+import com.richard.infrastructure.resources.mapper.ReserveMapper;
+import com.richard.infrastructure.resources.request.ReserveRequest;
 import org.jboss.logging.Logger;
 
 import javax.ws.rs.Consumes;
@@ -18,7 +18,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import static com.richard.infrastructure.resource.utils.ResourceUtils.genericUriBuilder;
+import static com.richard.infrastructure.resources.utils.ResourceUtils.genericUriBuilder;
 
 @Path("/reservations")
 @Consumes(MediaType.APPLICATION_JSON)

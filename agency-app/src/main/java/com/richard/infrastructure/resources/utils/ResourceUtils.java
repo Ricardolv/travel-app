@@ -1,4 +1,4 @@
-package com.richard.infrastructure.resource.utils;
+package com.richard.infrastructure.resources.utils;
 
 import org.jboss.logging.Logger;
 
