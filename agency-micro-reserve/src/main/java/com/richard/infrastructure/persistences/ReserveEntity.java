@@ -21,10 +21,10 @@ public class ReserveEntity extends PanacheEntity {
     @Column(name = "code_customer")
     public Long codeCustomer;
 
-    public Long getcodeCustomer() {
+    public Long getCodeCustomer() {
         return codeCustomer;
     }
-    public void setcodeCustomer(Long codeCustomer) {
+    public void setCodeCustomer(Long codeCustomer) {
         this.codeCustomer = codeCustomer;
     }
 

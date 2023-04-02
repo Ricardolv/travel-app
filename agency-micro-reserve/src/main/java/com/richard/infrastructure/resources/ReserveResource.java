@@ -35,6 +35,12 @@ public class ReserveResource {
     }
 
     @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String hello() {
+        return "Hello MICRO-RESERVE";
+    }
+
+    @GET
     public Response getAll() {
         return Response.ok(mapper.toEntityList(reserveService.findAll())).build();
     }

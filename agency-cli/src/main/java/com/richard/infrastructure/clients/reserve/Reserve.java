@@ -1,17 +1,17 @@
 package com.richard.infrastructure.clients.reserve;
 
 public class Reserve {
-    private String nameCustomer;
+    private Long codeCustomer;
 
-    private Reserve(String nameCustomer) {
-        this.nameCustomer = nameCustomer;
+    private Reserve(Long codeCustomer) {
+        this.codeCustomer = codeCustomer;
     }
 
-    public static Reserve of(String nameCustomer) {
-        return new Reserve(nameCustomer);
+    public static Reserve of(Long codeCustomer) {
+        return new Reserve(codeCustomer);
     }
 
-    public String getNameCustomer() {
-        return nameCustomer;
+    public Long getCodeCustomer() {
+        return codeCustomer;
     }
 }

@@ -20,7 +20,7 @@ public class ReserveService {
         LOGGER.info("INIT create id cutomer {}" + codeCustomer);
 
         ReserveEntity reserveEntity = new ReserveEntity();
-        reserveEntity.setcodeCustomer(codeCustomer);
+        reserveEntity.setCodeCustomer(codeCustomer);
         reserveEntity.persist();
 
         LOGGER.info("END created reserveEntity {}" + reserveEntity);

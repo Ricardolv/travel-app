@@ -26,7 +26,7 @@ public class ReserveResource {
     @Path("new")
     public Response newCustomer() {
         LOGGER.info("newCustomer");
-        Reserve reserve = Reserve.of("ReserveRemoto");
+        Reserve reserve = Reserve.of(1L);
 
         Response response = reserveService.newReserve(reserve);
 

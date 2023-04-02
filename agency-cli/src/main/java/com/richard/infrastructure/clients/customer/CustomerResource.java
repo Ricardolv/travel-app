@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -32,6 +33,16 @@ public class CustomerResource {
         Response response = customerService.newCustomer(customer);
 
         return Response.status(Status.CREATED).entity(response.getHeaders().get("Location")).build();
+    }
+
+    @GET()
+    @Path("/{id}")
+    public Response findById(@PathParam("id") long id) throws InterruptedException {
+        LOGGER.info("findById");
+
+        Response response = customerService.findById(id);
+
+        return Response.status(Status.OK).entity(response.getEntity()).build();
     }
 
 }

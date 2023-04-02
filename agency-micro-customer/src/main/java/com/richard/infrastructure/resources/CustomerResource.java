@@ -35,6 +35,12 @@ public class CustomerResource {
     }
 
     @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String hello() {
+        return "Hello MICRO-CUSTOMER";
+    }
+
+    @GET
     public Response listAll() {
         return Response.ok()
                 .entity(mapper.toEntityList(service.findAll()))
@@ -43,7 +49,7 @@ public class CustomerResource {
 
     @GET
     @Path("/{id}")
-    public Response findById(@PathParam("id") long id) {
+    public Response findById(@PathParam("id") long id) throws InterruptedException {
         return Response.ok()
                 .entity(mapper.toEntity(service.findById(id)))
                 .build();
